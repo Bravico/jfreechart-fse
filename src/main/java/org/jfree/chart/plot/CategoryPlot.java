@@ -204,6 +204,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -4748,177 +4749,35 @@ public class CategoryPlot extends Plot implements ValueAxisPlot, Pannable,
             return false;
         }
         CategoryPlot that = (CategoryPlot) obj;
-        if (this.orientation != that.orientation) {
-            return false;
+        List property1 = Arrays.asList(new Object[]{this.orientation,this.axisOffset,this.domainAxes,this.domainAxisLocations,
+        		this.drawSharedDomainAxis,this.rangeAxes, this.rangeAxisLocations, this.datasetToDomainAxesMap,this.datasetToRangeAxesMap,
+        		this.renderers, this.renderingOrder, this.columnRenderingOrder, this.rowRenderingOrder, this.domainGridlinesVisible, this.domainGridlinePosition,
+        		this.domainGridlineStroke, this.domainGridlinePaint, this.rangeGridlinesVisible, this.rangeGridlineStroke,
+        		this.rangeGridlinePaint, this.anchorValue, this.rangeCrosshairVisible, this.rangeCrosshairValue, this.rangeCrosshairStroke,
+        		this.rangeCrosshairPaint, this.rangeCrosshairLockedOnData, this.foregroundDomainMarkers,
+        		this.backgroundDomainMarkers, this.foregroundRangeMarkers, this.backgroundRangeMarkers, this.annotations,
+        		this.weight, this.fixedDomainAxisSpace, this.fixedRangeAxisSpace, this.fixedLegendItems, this.domainCrosshairVisible, this.crosshairDatasetIndex,
+        		this.domainCrosshairColumnKey, this.domainCrosshairRowKey, this.domainCrosshairPaint, this.domainCrosshairStroke, this.rangeMinorGridlinesVisible,
+        		this.rangeMinorGridlinePaint, this.rangeMinorGridlineStroke, this.rangeZeroBaselineVisible, this.rangeZeroBaselinePaint, this.rangeZeroBaselineStroke,
+        		this.shadowGenerator
+        		});
+        List property2 = Arrays.asList(new Object[]{that.orientation,that.axisOffset,that.domainAxes,that.domainAxisLocations,
+        		that.drawSharedDomainAxis,that.rangeAxes, that.rangeAxisLocations, that.datasetToDomainAxesMap,that.datasetToRangeAxesMap,
+        		that.renderers, that.renderingOrder, that.columnRenderingOrder, that.rowRenderingOrder, that.domainGridlinesVisible, that.domainGridlinePosition,
+        		that.domainGridlineStroke, that.domainGridlinePaint, that.rangeGridlinesVisible, that.rangeGridlineStroke,
+        		that.rangeGridlinePaint, that.anchorValue, that.rangeCrosshairVisible, that.rangeCrosshairValue, that.rangeCrosshairStroke,
+        		that.rangeCrosshairPaint, that.rangeCrosshairLockedOnData, that.foregroundDomainMarkers,
+        		that.backgroundDomainMarkers, that.foregroundRangeMarkers, that.backgroundRangeMarkers, that.annotations,
+        		that.weight, that.fixedDomainAxisSpace, that.fixedRangeAxisSpace, that.fixedLegendItems, that.domainCrosshairVisible, that.crosshairDatasetIndex,
+        		that.domainCrosshairColumnKey, that.domainCrosshairRowKey, that.domainCrosshairPaint, that.domainCrosshairStroke, that.rangeMinorGridlinesVisible,
+        		that.rangeMinorGridlinePaint, that.rangeMinorGridlineStroke, that.rangeZeroBaselineVisible, that.rangeZeroBaselinePaint, that.rangeZeroBaselineStroke,
+        		that.shadowGenerator
+        		});
+        if(property1.equals(property2)){
+        	return true;
+        }else{
+        	return false;
         }
-        if (!ObjectUtils.equal(this.axisOffset, that.axisOffset)) {
-            return false;
-        }
-        if (!this.domainAxes.equals(that.domainAxes)) {
-            return false;
-        }
-        if (!this.domainAxisLocations.equals(that.domainAxisLocations)) {
-            return false;
-        }
-        if (this.drawSharedDomainAxis != that.drawSharedDomainAxis) {
-            return false;
-        }
-        if (!this.rangeAxes.equals(that.rangeAxes)) {
-            return false;
-        }
-        if (!this.rangeAxisLocations.equals(that.rangeAxisLocations)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.datasetToDomainAxesMap,
-                that.datasetToDomainAxesMap)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.datasetToRangeAxesMap,
-                that.datasetToRangeAxesMap)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.renderers, that.renderers)) {
-            return false;
-        }
-        if (this.renderingOrder != that.renderingOrder) {
-            return false;
-        }
-        if (this.columnRenderingOrder != that.columnRenderingOrder) {
-            return false;
-        }
-        if (this.rowRenderingOrder != that.rowRenderingOrder) {
-            return false;
-        }
-        if (this.domainGridlinesVisible != that.domainGridlinesVisible) {
-            return false;
-        }
-        if (this.domainGridlinePosition != that.domainGridlinePosition) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.domainGridlineStroke,
-                that.domainGridlineStroke)) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.domainGridlinePaint,
-                that.domainGridlinePaint)) {
-            return false;
-        }
-        if (this.rangeGridlinesVisible != that.rangeGridlinesVisible) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.rangeGridlineStroke,
-                that.rangeGridlineStroke)) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.rangeGridlinePaint,
-                that.rangeGridlinePaint)) {
-            return false;
-        }
-        if (this.anchorValue != that.anchorValue) {
-            return false;
-        }
-        if (this.rangeCrosshairVisible != that.rangeCrosshairVisible) {
-            return false;
-        }
-        if (this.rangeCrosshairValue != that.rangeCrosshairValue) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.rangeCrosshairStroke,
-                that.rangeCrosshairStroke)) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.rangeCrosshairPaint,
-                that.rangeCrosshairPaint)) {
-            return false;
-        }
-        if (this.rangeCrosshairLockedOnData
-                != that.rangeCrosshairLockedOnData) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.foregroundDomainMarkers,
-                that.foregroundDomainMarkers)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.backgroundDomainMarkers,
-                that.backgroundDomainMarkers)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.foregroundRangeMarkers,
-                that.foregroundRangeMarkers)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.backgroundRangeMarkers,
-                that.backgroundRangeMarkers)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.annotations, that.annotations)) {
-            return false;
-        }
-        if (this.weight != that.weight) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.fixedDomainAxisSpace,
-                that.fixedDomainAxisSpace)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.fixedRangeAxisSpace,
-                that.fixedRangeAxisSpace)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.fixedLegendItems,
-                that.fixedLegendItems)) {
-            return false;
-        }
-        if (this.domainCrosshairVisible != that.domainCrosshairVisible) {
-            return false;
-        }
-        if (this.crosshairDatasetIndex != that.crosshairDatasetIndex) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.domainCrosshairColumnKey,
-                that.domainCrosshairColumnKey)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.domainCrosshairRowKey,
-                that.domainCrosshairRowKey)) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.domainCrosshairPaint,
-                that.domainCrosshairPaint)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.domainCrosshairStroke,
-                that.domainCrosshairStroke)) {
-            return false;
-        }
-        if (this.rangeMinorGridlinesVisible
-                != that.rangeMinorGridlinesVisible) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.rangeMinorGridlinePaint,
-                that.rangeMinorGridlinePaint)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.rangeMinorGridlineStroke,
-                that.rangeMinorGridlineStroke)) {
-            return false;
-        }
-        if (this.rangeZeroBaselineVisible != that.rangeZeroBaselineVisible) {
-            return false;
-        }
-        if (!PaintUtils.equal(this.rangeZeroBaselinePaint,
-                that.rangeZeroBaselinePaint)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.rangeZeroBaselineStroke,
-                that.rangeZeroBaselineStroke)) {
-            return false;
-        }
-        if (!ObjectUtils.equal(this.shadowGenerator,
-                that.shadowGenerator)) {
-            return false;
-        }
-        return super.equals(obj);
     }
 
     /**
